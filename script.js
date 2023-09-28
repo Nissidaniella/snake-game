@@ -69,6 +69,11 @@ const initGame =() => {
     for (let i = snakeBody.length - 1; i > 0; i--) {
         snakeBody[i] = snakeBody[i - 1];
     }
-    snakeBody[0] = [snakeX, snakeY]; // setting first element of snake body to current snake position
-    
+    snakeBody[0] = [snakeX, snakeY]; // setting first element of snake body to current snake position 
+
+    // Checking if the snake's head is out of the wall, if so setting gameOver to true 
+    if (snakeX <= 0 || snakeX > 30 || snakeY < 0 || snakeY > 30) {
+        return gameOver = true;
+    }
+
 }
