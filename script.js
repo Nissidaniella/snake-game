@@ -49,5 +49,16 @@ const changeDirection = e => {
 
 const initGame =() => {
     if (gameOver) return handleGameOver();
-    let html = '<div class="food" style= "grid-area: ${foodY}/${foodX}"></div>';
+    let html = '<div class="food" style= "grid-area: ${foodY}/${foodX}"></div>'; 
+
+    //Checking if the snake hit the food 
+    if (snakeX === foodX && snakeY === foodY) {
+        updateFoodPosition();
+        snakeBody.push([foodX, foodY]); // Pushing the food position to the snake body array
+        score++; // Incrementing the score by 1
+        highScore = score >= highScore ? score : highScore; 
+        localStorage.setItem("high-score", highScore);
+        scoreElement.innerText = `Score: ${score}`;
+        highScoreElement.innerText = `High Score: ${highScore}`;
+    }
 }
