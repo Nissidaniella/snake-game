@@ -47,6 +47,7 @@ const changeDirection = (e) => {
   }
 };
 
+// Code below done by Beniah Opong Diallo
 // Calling changeDirection on each key click and passing key dataset value as an object
 controls.forEach((button) =>
   button.addEventListener("click", () =>
@@ -84,8 +85,7 @@ const initGame = () => {
   }
   for (let i = 0; i < snakeBody.length; i++) {
     // Adding a div for each part of the snakes body
-    html +=
-    `<div class="head" style= "grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
+    html += `<div class="head" style= "grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}"></div>`;
     // Checking if the snake hit the body, if so set gameOver to true
     if (
       i !== 0 &&
