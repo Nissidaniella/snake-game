@@ -64,4 +64,11 @@ const initGame =() => {
     // Updating the snake's head position based on the current velocity 
     snakeX += velocityX;
     snakeY += velocityY;
+
+    // Shifting forward the value of elements in the snake body by one 
+    for (let i = snakeBody.length - 1; i > 0; i--) {
+        snakeBody[i] = snakeBody[i - 1];
+    }
+    snakeBody[0] = [snakeX, snakeY]; // setting first element of snake body to current snake position
+    
 }
